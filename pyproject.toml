@@ -8,9 +8,23 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 pygame = "*"
-pytmx = "^3.31"
+pytmx = "*"
 
+[tool.poetry.group.dev.dependencies]
+pre-commit = "*"
+ipdb = "*"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+log_cli = false
+
+[tool.isort]
+profile = "black"
+line_length = 120
+force_alphabetical_sort_within_sections = true
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+default_section = "THIRDPARTY"
